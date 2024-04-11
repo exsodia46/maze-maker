@@ -9,7 +9,7 @@ gameover = False
 
 p1 = player()
 
-#constants
+#constantssw
 LEFT = 0
 RIGHT = 1
 UP = 2
@@ -60,26 +60,28 @@ while not gameover:
                 keys[RIGHT] = False
         
  #physics-----------------------------------------------------------------------------------------
-p1.move(keys, map)
+    p1.move(keys, map)
 
 
  #renders-----------------------------------------------------------------------------------------
-p1.draw(screen)
+    
 
 
-screen.fill((0,0,0))
+    screen.fill((0,0,0))
 
-for i in range(16):
-        for j in range(20):
-            if map[i][j] == 1:
-                screen.blit(dirt, (j * 50, i * 50), (0, 0, 50, 50))
-            if map[i][j] == 2:
-                screen.blit(brick, (j * 50, i * 50), (0, 0, 50, 50))
-            if map[i][j] == 3:
-                screen.blit(door, (j * 50, i * 50), (0, 0, 50, 50))
-            if map[i][j] == 4:
-                screen.blit(chest, (j * 50, i * 50), (0, 0, 50, 50))
-pygame.display.flip()
+    p1.draw(screen)
+
+    for i in range(16):
+            for j in range(20):
+                if map[i][j] == 1:
+                    screen.blit(dirt, (j * 50, i * 50), (0, 0, 50, 50))
+                if map[i][j] == 2:
+                    screen.blit(brick, (j * 50, i * 50), (0, 0, 50, 50))
+                if map[i][j] == 3:
+                    screen.blit(door, (j * 50, i * 50), (0, 0, 50, 50))
+                if map[i][j] == 4:
+                    screen.blit(chest, (j * 50, i * 50), (0, 0, 50, 50))
+    pygame.display.flip()
 
 
 
